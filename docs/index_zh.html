@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="SPAC：面向分布式神经推理的会话绑定路径认证">
+  <meta name="description" content="SPAC 将设备身份、有序逐跳记录、分片声明与跨跳编码激活连续性绑定为一份可验证证明，面向分布式神经网络推理场景。">
+  <meta name="keywords" content="分布式推理, 路径认证, 会话绑定, 边缘计算, DNN 安全, 消息认证码, 信任边界, 神经网络安全">
+  <meta name="author" content="Zhengzhe Xiang, Yinlin Chen, Guanjie Cheng, Javid Taheri, Shuiguang Deng">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Chinese">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="浙江大学 / 瑞典皇家理工学院（KTH）">
+  <meta property="og:title" content="SPAC：面向分布式神经推理的会话绑定路径认证">
+  <meta property="og:description" content="SPAC 将设备身份、有序逐跳记录、分片声明与跨跳编码激活连续性绑定为一份可验证证明，面向分布式神经网络推理场景。">
+  <meta property="og:url" content="https://nullion2021.github.io/SPAC/index_zh.html">
+  <meta property="og:image" content="https://nullion2021.github.io/SPAC/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SPAC - 研究预览图">
+  <meta property="article:published_time" content="2026-10-27T00:00:00.000Z">
+  <meta property="article:author" content="Zhengzhe Xiang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="分布式推理">
+  <meta property="article:tag" content="路径认证">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SPAC：面向分布式神经推理的会话绑定路径认证">
+  <meta name="twitter:description" content="SPAC 将设备身份、有序逐跳记录、分片声明与跨跳编码激活连续性绑定为一份可验证证明，面向分布式神经网络推理场景。">
+  <meta name="twitter:image" content="https://nullion2021.github.io/SPAC/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="SPAC - 研究预览图">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="SPAC: Session-Bound Path Authentication for Distributed Neural Inference">
+  <meta name="citation_author" content="Xiang, Zhengzhe">
+  <meta name="citation_author" content="Chen, Yinlin">
+  <meta name="citation_author" content="Cheng, Guanjie">
+  <meta name="citation_author" content="Taheri, Javid">
+  <meta name="citation_author" content="Deng, Shuiguang">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://nullion2021.github.io/SPAC/static/pdfs/spac_paper.pdf">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>SPAC：面向分布式神经推理的会话绑定路径认证</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "SPAC: Session-Bound Path Authentication for Distributed Neural Inference",
+    "description": "SPAC 将设备身份、有序逐跳记录、已注册的分片声明与跨跳编码激活连续性绑定到同一份可验证证明中。",
+    "author": [
+      { "@type": "Person", "name": "Zhengzhe Xiang", "affiliation": { "@type": "Organization", "name": "Zhejiang University" } },
+      { "@type": "Person", "name": "Yinlin Chen", "affiliation": { "@type": "Organization", "name": "Zhejiang University" } },
+      { "@type": "Person", "name": "Guanjie Cheng", "affiliation": { "@type": "Organization", "name": "Zhejiang University" } },
+      { "@type": "Person", "name": "Javid Taheri", "affiliation": { "@type": "Organization", "name": "KTH Royal Institute of Technology" } },
+      { "@type": "Person", "name": "Shuiguang Deng", "affiliation": { "@type": "Organization", "name": "Zhejiang University" } }
+    ],
+    "datePublished": "2026-10-27",
+    "url": "https://nullion2021.github.io/SPAC/index_zh.html",
+    "image": "https://nullion2021.github.io/SPAC/static/images/social_preview.png",
+    "keywords": ["分布式推理", "路径认证", "会话绑定", "边缘计算", "DNN 安全"],
+    "isAccessibleForFree": true,
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://nullion2021.github.io/SPAC/index_zh.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="回到顶部" aria-label="回到顶部">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div class="is-size-6 publication-authors" style="margin-bottom: 0.75rem;">
+              <a href="index.html">English</a>&nbsp;&nbsp;|&nbsp;&nbsp;<strong>中文</strong>
+            </div>
+            <h1 class="title is-1 publication-title">SPAC：面向分布式神经推理的会话绑定路径认证</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Zhengzhe Xiang,</span>
+              <span class="author-block">Yinlin Chen,</span>
+              <span class="author-block">Guanjie Cheng,</span>
+              <span class="author-block">Javid Taheri,</span>
+              <span class="author-block">Shuiguang Deng</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">浙江大学&nbsp;&middot;&nbsp;瑞典皇家理工学院（KTH）<br>论文已投稿至 IEEE Transactions on Dependable and Secure Computing</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/pdfs/spac_paper.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>论文</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/Nullion2021/SPAC" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>代码</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser figure -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/overview.png" alt="SPAC 系统与威胁模型总览" width="100%"/>
+        <h2 class="subtitle has-text-centered">
+          SPAC 系统与威胁模型（N&nbsp;=&nbsp;5）。攻击者控制设备间通信（红色区域），至多可腐化 k&nbsp;&lt;&nbsp;N 台设备。注册与验证环节是可信的。
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser figure -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">摘要</h2>
+          <div class="content has-text-justified">
+            <p>
+              分布式神经网络推理在彼此独立管理的设备上依次执行有序的模型分片，因此需要对会话参与和激活传递进行认证。我们提出 SPAC（Session-bound Path Authentication Chain，会话绑定路径认证链），将设备身份、有序逐跳记录、已注册的分片声明以及跨跳编码激活连续性绑定到同一份证明中。在至多 k 台（k&nbsp;&lt;&nbsp;N）设备可能被腐化的博弈模型下，通过归约到消息认证码（MAC）不可伪造性，可以界定诚实设备参与被全新误归因的上界。在声明绑定层级，SPAC 认证已注册的声明与编码传递，但不提供设备侧硬件证明，也不证明每一步推理的正确性；硬件背书的度量需要额外证据。在所测试的代理攻击、拓扑攻击与摘要不一致注入负载中，均未观察到被接受的伪造。SPAC 在所评估的多层感知机（MLP）与 ResNet 配置下仅增加 0.65&ndash;2.56&nbsp;毫秒开销，证明元数据随链长线性增长。编码研究揭示了浮点转发下单元内替换攻击的可行性；对传输的整数编码进行认证即可在该类链路上消除这一替换机制&mdash;&mdash;相应的 ResNet 实验中精度差异仅为 0.01 个百分点。这些结果将&ldquo;已认证的路径记录与编码传递一致性&rdquo;与&ldquo;被腐化计算的语义正确性&rdquo;明确区分开来。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">实验结果一览</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/figure1_exp1_asr_delta.png" alt="代理攻击 ASR-δ 曲线" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            代理攻击。四种代理攻击的 ASR&ndash;&delta; 曲线（N&nbsp;=&nbsp;5，五个随机种子）。完整模型替代者在任意容忍度下 ASR&nbsp;=&nbsp;1，较弱的代理只有随 &delta; 放宽才逐渐被接受。SPAC 在所有 &delta; 下全部拒绝（252 个测量单元中 FAR&nbsp;=&nbsp;0）。
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/figure7_m3_block5_air.png" alt="真实部署下的激活注入结果" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            真实部署下的激活注入。连续性绑定与较弱验证在所覆盖的全部 MLP、ResNet-18、ViT 配置上的对比：SPAC 在每个单元中接受事件数为零，单侧 95% 上界为每单元 0.93%。
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/figure9_m5_real_chain.png" alt="跨主机混合技术栈链结果" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            跨主机混合技术栈链。在异构设备（4070TiS&nbsp;&rarr;&nbsp;4090D&nbsp;&rarr;&nbsp;DaVinci&nbsp;Mini CPU 模式）上的端到端链式执行，验证了证明链在真实硬件间的兼容性。
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/figure4_exp4_overhead.png" alt="系统开销测量" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            系统开销。在所评估的 MLP 与 ResNet 配置下，SPAC 每会话仅增加 0.65&ndash;2.56&nbsp;毫秒，证明元数据随链长线性增长。
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- End image carousel -->
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="复制 BibTeX">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">复制</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@misc{xiang2026spac,
+  title        = {SPAC: Session-Bound Path Authentication for Distributed Neural Inference},
+  author       = {Xiang, Zhengzhe and Chen, Yinlin and Cheng, Guanjie and Taheri, Javid and Deng, Shuiguang},
+  year         = {2026},
+  howpublished = {Manuscript submitted to IEEE Transactions on Dependable and Secure Computing},
+  url          = {https://nullion2021.github.io/SPAC/}
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            本页面基于 <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> 构建（改自 <a href="https://nerfies.github.io" target="_blank">Nerfies</a> 项目页面）。
+            欢迎借用本站源码，只需在页脚链接回本页。<br>本网站采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">知识共享署名-相同方式共享 4.0 国际许可协议</a>授权。
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>

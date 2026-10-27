@@ -1,6 +1,8 @@
 # SPAC: Session-Bound Path Authentication for Distributed Neural Inference
 
-**[Paper (PDF)](docs/static/pdfs/spac_paper.pdf)** | **[Project Page](https://nullion2021.github.io/SPAC/)**
+**[English](README.md)** | **[中文](README.zh-CN.md)**
+
+**[Paper (PDF)](docs/static/pdfs/spac_paper.pdf)** | **[Project Page](https://nullion2021.github.io/SPAC/)** | **[中文主页](https://nullion2021.github.io/SPAC/index_zh.html)**
 
 SPAC (Session-bound Path Authentication Chain) is a chain-based group authentication
 mechanism for distributed neural inference. It binds device identities, ordered hop
