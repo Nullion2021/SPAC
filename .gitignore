@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+results/*
+!results/.gitkeep
+assets/example_outputs/*
+!assets/example_outputs/.gitkeep
+data/*
+!data/.gitkeep
+checkpoints/*
+!checkpoints/.gitkeep

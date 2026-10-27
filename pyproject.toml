@@ -1,0 +1,27 @@
+[project]
+name = "spac"
+version = "0.1.0"
+description = "Reproducible open-source release for chain-based group authentication over distributed DNN inference."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+dependencies = [
+  "torch>=2.0",
+  "torchvision>=0.15",
+  "numpy>=1.24",
+  "cryptography>=42.0",
+  "matplotlib>=3.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

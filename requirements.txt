@@ -1,0 +1,6 @@
+torch>=2.0
+torchvision>=0.15
+numpy>=1.24
+cryptography>=42.0
+matplotlib>=3.10
+pytest>=8.0

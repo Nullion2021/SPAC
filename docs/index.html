@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="SPAC: Session-Bound Path Authentication for Distributed Neural Inference">
+  <meta name="description" content="SPAC binds device identities, ordered hop records, shard claims, and cross-hop encoded-activation continuity into one verifiable proof for distributed neural inference.">
+  <meta name="keywords" content="distributed inference, path authentication, session binding, edge computing, DNN security, MAC, trust-boundary attestation, neural network security">
+  <meta name="author" content="Zhengzhe Xiang, Yinlin Chen, Guanjie Cheng, Javid Taheri, Shuiguang Deng">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Zhejiang University / KTH Royal Institute of Technology">
+  <meta property="og:title" content="SPAC: Session-Bound Path Authentication for Distributed Neural Inference">
+  <meta property="og:description" content="SPAC binds device identities, ordered hop records, shard claims, and cross-hop encoded-activation continuity into one verifiable proof for distributed neural inference.">
+  <meta property="og:url" content="https://nullion2021.github.io/SPAC/">
+  <meta property="og:image" content="https://nullion2021.github.io/SPAC/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SPAC - Research Preview">
+  <meta property="article:published_time" content="2026-10-27T00:00:00.000Z">
+  <meta property="article:author" content="Zhengzhe Xiang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="distributed inference">
+  <meta property="article:tag" content="authentication">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SPAC: Session-Bound Path Authentication for Distributed Neural Inference">
+  <meta name="twitter:description" content="SPAC binds device identities, ordered hop records, shard claims, and cross-hop encoded-activation continuity into one verifiable proof for distributed neural inference.">
+  <meta name="twitter:image" content="https://nullion2021.github.io/SPAC/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="SPAC - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="SPAC: Session-Bound Path Authentication for Distributed Neural Inference">
+  <meta name="citation_author" content="Xiang, Zhengzhe">
+  <meta name="citation_author" content="Chen, Yinlin">
+  <meta name="citation_author" content="Cheng, Guanjie">
+  <meta name="citation_author" content="Taheri, Javid">
+  <meta name="citation_author" content="Deng, Shuiguang">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://nullion2021.github.io/SPAC/static/pdfs/spac_paper.pdf">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>SPAC: Session-Bound Path Authentication for Distributed Neural Inference</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "SPAC: Session-Bound Path Authentication for Distributed Neural Inference",
+    "description": "SPAC binds device identities, ordered hop records, registered shard claims, and cross-hop encoded-activation continuity into one verifiable proof for distributed neural inference.",
+    "author": [
+      { "@type": "Person", "name": "Zhengzhe Xiang", "affiliation": { "@type": "Organization", "name": "Zhejiang University" } },
+      { "@type": "Person", "name": "Yinlin Chen", "affiliation": { "@type": "Organization", "name": "Zhejiang University" } },
+      { "@type": "Person", "name": "Guanjie Cheng", "affiliation": { "@type": "Organization", "name": "Zhejiang University" } },
+      { "@type": "Person", "name": "Javid Taheri", "affiliation": { "@type": "Organization", "name": "KTH Royal Institute of Technology" } },
+      { "@type": "Person", "name": "Shuiguang Deng", "affiliation": { "@type": "Organization", "name": "Zhejiang University" } }
+    ],
+    "datePublished": "2026-10-27",
+    "url": "https://nullion2021.github.io/SPAC/",
+    "image": "https://nullion2021.github.io/SPAC/static/images/social_preview.png",
+    "keywords": ["distributed inference", "path authentication", "session binding", "edge computing", "DNN security"],
+    "isAccessibleForFree": true,
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://nullion2021.github.io/SPAC/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SPAC: Session-Bound Path Authentication for Distributed Neural Inference</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Zhengzhe Xiang,</span>
+              <span class="author-block">Yinlin Chen,</span>
+              <span class="author-block">Guanjie Cheng,</span>
+              <span class="author-block">Javid Taheri,</span>
+              <span class="author-block">Shuiguang Deng</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Zhejiang University&nbsp;&middot;&nbsp;KTH Royal Institute of Technology<br>Manuscript submitted to IEEE Transactions on Dependable and Secure Computing</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/pdfs/spac_paper.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/Nullion2021/SPAC" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser figure -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/overview.png" alt="SPAC system and threat model overview" width="100%"/>
+        <h2 class="subtitle has-text-centered">
+          SPAC system and threat model (N&nbsp;=&nbsp;5). The adversary controls inter-device communication (red region) and may corrupt at most k&nbsp;&lt;&nbsp;N devices. Enrollment and verification are trusted.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser figure -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Distributed neural inference executes ordered model shards across independently managed devices, creating a need to authenticate session participation and activation transfers. We propose SPAC (Session-bound Path Authentication Chain), which binds device identities, ordered hop records, registered shard claims, and cross-hop encoded-activation continuity into one proof. In a corruption game where at most k of N devices may be compromised (k&nbsp;&lt;&nbsp;N), a reduction to message authentication code (MAC) unforgeability bounds fresh false attribution of honest-device participation. At the claim-binding tier, SPAC authenticates registered claims and encoded transfers but does not provide device-side hardware attestation or prove the correctness of every inference step; hardware-endorsed measurements require additional evidence. No accepted forgery was observed in the tested proxy, topology, and digest-inconsistent injection workloads. SPAC adds 0.65&ndash;2.56&nbsp;ms in the evaluated multilayer perceptron (MLP) and ResNet configurations, with proof metadata growing linearly in the chain length. The encoding study exposes successful within-cell substitutions under float forwarding. Authenticating transmitted integer codes removes this substitution mechanism on those links; the corresponding ResNet experiment observed an accuracy difference of 0.01 percentage points. These results distinguish authenticated path records and encoded transfer consistency from the semantic correctness of compromised computation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Results at a Glance</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/figure1_exp1_asr_delta.png" alt="Proxy attack ASR-delta curves" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Proxy attacks. ASR&ndash;&delta; curves of four proxy attacks (N&nbsp;=&nbsp;5, five seeds). The full-model substitute stays at ASR&nbsp;=&nbsp;1 at every tolerance, while weaker proxies become acceptable only as &delta; is relaxed. SPAC rejects all of them at every &delta; (FAR&nbsp;=&nbsp;0 in all 252 measured cells).
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/figure7_m3_block5_air.png" alt="Real deployment activation injection results" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Activation injection under real deployment. Continuity binding versus weaker verification across all covered MLP, ResNet-18, and ViT configurations: zero SPAC acceptance events in every cell, with a one-sided 95% upper bound of 0.93% per cell.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/figure9_m5_real_chain.png" alt="Cross-host mixed-stack chain results" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Cross-host mixed-stack chains. End-to-end chain execution across heterogeneous devices (4070TiS&nbsp;&rarr;&nbsp;4090D&nbsp;&rarr;&nbsp;DaVinci Mini CPU-mode stack) confirms compatibility of the proof chain across real hardware.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/figure4_exp4_overhead.png" alt="System overhead measurements" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            System overhead. SPAC adds 0.65&ndash;2.56&nbsp;ms per session in the evaluated MLP and ResNet configurations, with proof metadata growing linearly in the chain length.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- End image carousel -->
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@misc{xiang2026spac,
+  title        = {SPAC: Session-Bound Path Authentication for Distributed Neural Inference},
+  author       = {Xiang, Zhengzhe and Chen, Yinlin and Cheng, Guanjie and Taheri, Javid and Deng, Shuiguang},
+  year         = {2026},
+  howpublished = {Manuscript submitted to IEEE Transactions on Dependable and Secure Computing},
+  url          = {https://nullion2021.github.io/SPAC/}
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>

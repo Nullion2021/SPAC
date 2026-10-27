@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "SPAC: Session-Bound Path Authentication for Distributed Neural Inference"
+authors:
+  - family-names: Xiang
+    given-names: Zhengzhe
+  - family-names: Chen
+    given-names: Yinlin
+  - family-names: Cheng
+    given-names: Guanjie
+  - family-names: Taheri
+    given-names: Javid
+  - family-names: Deng
+    given-names: Shuiguang
+type: misc
+keywords:
+  - distributed inference
+  - path authentication
+  - session binding
+  - edge computing
+  - DNN security
+url: "https://github.com/Nullion2021/SPAC"
+repository-code: "https://github.com/Nullion2021/SPAC"
+abstract: "SPAC (Session-bound Path Authentication Chain) binds device identities, ordered hop records, registered shard claims, and cross-hop encoded-activation continuity into one verifiable proof for distributed neural inference, defending against proxy-model substitution and topology-tampering attacks."
+license: Apache-2.0
