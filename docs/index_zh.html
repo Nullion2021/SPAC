@@ -211,27 +211,27 @@
         <h2 class="title is-3 has-text-centered">实验结果一览</h2>
         <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
-          <img src="static/images/figure1_exp1_asr_delta.png" alt="代理攻击 ASR-δ 曲线" loading="lazy"/>
+          <img src="static/images/figure_protocol_overview.png" alt="SPAC 协议总览" loading="lazy"/>
           <h2 class="subtitle has-text-centered">
-            代理攻击。四种代理攻击的 ASR&ndash;&delta; 曲线（N&nbsp;=&nbsp;5，五个随机种子）。完整模型替代者在任意容忍度下 ASR&nbsp;=&nbsp;1，较弱的代理只有随 &delta; 放宽才逐渐被接受。SPAC 在所有 &delta; 下全部拒绝（252 个测量单元中 FAR&nbsp;=&nbsp;0）。
+            SPAC 总览。每一跳对自身身份、已注册声明、激活摘要与前驱状态进行认证；验证方检查这些记录、相邻摘要连续性以及末端输出绑定。
           </h2>
         </div>
         <div class="item">
-          <img src="static/images/figure7_m3_block5_air.png" alt="真实部署下的激活注入结果" loading="lazy"/>
+          <img src="static/images/figure_exp12_asr_delta.png" alt="代理与拓扑攻击 ASR-δ 曲线" loading="lazy"/>
           <h2 class="subtitle has-text-centered">
-            真实部署下的激活注入。连续性绑定与较弱验证在所覆盖的全部 MLP、ResNet-18、ViT 配置上的对比：SPAC 在每个单元中接受事件数为零，单侧 95% 上界为每单元 0.93%。
+            代理攻击。四种代理攻击的 ASR&ndash;&delta; 曲线（N&nbsp;=&nbsp;5，五个随机种子）。完整模型替代者在任意容忍度、任意架构下 ASR&nbsp;=&nbsp;1；较弱的代理（随机、蒸馏、查询自适应）只有随 &delta; 放宽才逐渐被接受。SPAC 在所有 &delta; 下全部拒绝（252 个测量单元中 FAR&nbsp;=&nbsp;0）。
           </h2>
         </div>
         <div class="item">
-          <img src="static/images/figure9_m5_real_chain.png" alt="跨主机混合技术栈链结果" loading="lazy"/>
+          <img src="static/images/figure_continuity.png" alt="连续性绑定与较弱验证对比" loading="lazy"/>
           <h2 class="subtitle has-text-centered">
-            跨主机混合技术栈链。在异构设备（4070TiS&nbsp;&rarr;&nbsp;4090D&nbsp;&rarr;&nbsp;DaVinci&nbsp;Mini CPU 模式）上的端到端链式执行，验证了证明链在真实硬件间的兼容性。
+            连续性绑定与较弱验证的对比。(a)&nbsp;CRA 风格基线与 SPAC 的激活注入接受情况，覆盖每种架构的全部配置（4 组 MLP、9 组 ResNet-18、9 组 ViT，各 n&nbsp;=&nbsp;320）：SPAC 在每个单元中接受事件数为零，单侧 95% 上界为每单元 0.93%。(b)&nbsp;5,184 份提交的子句级因子网格：去掉连续性子句后所有篡改载荷均通过；保留则全部拒绝。
           </h2>
         </div>
         <div class="item">
-          <img src="static/images/figure4_exp4_overhead.png" alt="系统开销测量" loading="lazy"/>
+          <img src="static/images/figure_encoding.png" alt="异构算术下的激活编码器" loading="lazy"/>
           <h2 class="subtitle has-text-centered">
-            系统开销。在所评估的 MLP 与 ResNet 配置下，SPAC 每会话仅增加 0.65&ndash;2.56&nbsp;毫秒，证明元数据随链长线性增长。
+            异构算术与对抗替换下的激活编码器（切分 ResNet-18）。(a)&nbsp;混合技术栈（CUDA fp32&nbsp;&rarr;&nbsp;CPU fp32&nbsp;&rarr;&nbsp;CPU fp16）：协议转发接受 300/300 个合法输入。(b)&nbsp;优化的单元内替换：前两条边上按梯度预算的有害事件；最终边与全部对照均为 0/96。
           </h2>
         </div>
       </div>

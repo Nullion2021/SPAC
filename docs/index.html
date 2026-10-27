@@ -211,27 +211,27 @@
         <h2 class="title is-3 has-text-centered">Results at a Glance</h2>
         <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
-          <img src="static/images/figure1_exp1_asr_delta.png" alt="Proxy attack ASR-delta curves" loading="lazy"/>
+          <img src="static/images/figure_protocol_overview.png" alt="SPAC protocol overview" loading="lazy"/>
           <h2 class="subtitle has-text-centered">
-            Proxy attacks. ASR&ndash;&delta; curves of four proxy attacks (N&nbsp;=&nbsp;5, five seeds). The full-model substitute stays at ASR&nbsp;=&nbsp;1 at every tolerance, while weaker proxies become acceptable only as &delta; is relaxed. SPAC rejects all of them at every &delta; (FAR&nbsp;=&nbsp;0 in all 252 measured cells).
+            SPAC overview. Each hop authenticates its identity, registered claim, activation digests, and predecessor state. The verifier checks these records, adjacent digest continuity, and the terminal output binding.
           </h2>
         </div>
         <div class="item">
-          <img src="static/images/figure7_m3_block5_air.png" alt="Real deployment activation injection results" loading="lazy"/>
+          <img src="static/images/figure_exp12_asr_delta.png" alt="Proxy and topology attack ASR-delta curves" loading="lazy"/>
           <h2 class="subtitle has-text-centered">
-            Activation injection under real deployment. Continuity binding versus weaker verification across all covered MLP, ResNet-18, and ViT configurations: zero SPAC acceptance events in every cell, with a one-sided 95% upper bound of 0.93% per cell.
+            Proxy attacks. ASR&ndash;&delta; curves of the four proxy attacks (N&nbsp;=&nbsp;5; five seeds). The full-model substitute stays at ASR&nbsp;=&nbsp;1 at every tolerance and under every architecture, while the weaker proxies (random, distilled, query-adaptive) become acceptable only as &delta; is relaxed. SPAC rejects all of them at every &delta; (FAR&nbsp;=&nbsp;0 in all 252 measured cells).
           </h2>
         </div>
         <div class="item">
-          <img src="static/images/figure9_m5_real_chain.png" alt="Cross-host mixed-stack chain results" loading="lazy"/>
+          <img src="static/images/figure_continuity.png" alt="Continuity binding versus weaker verification" loading="lazy"/>
           <h2 class="subtitle has-text-centered">
-            Cross-host mixed-stack chains. End-to-end chain execution across heterogeneous devices (4070TiS&nbsp;&rarr;&nbsp;4090D&nbsp;&rarr;&nbsp;DaVinci Mini CPU-mode stack) confirms compatibility of the proof chain across real hardware.
+            Continuity binding versus weaker verification. (a)&nbsp;Activation-injection acceptance of the CRA-style baseline and SPAC across all covered configurations per architecture (4 MLP, 9 ResNet-18, 9 ViT; n&nbsp;=&nbsp;320 each): zero SPAC events in every cell, one-sided 95% upper bound 0.93% per cell. (b)&nbsp;Clause-level factor grid over 5,184 submissions: without the continuity clause all altered payloads pass; with it none do.
           </h2>
         </div>
         <div class="item">
-          <img src="static/images/figure4_exp4_overhead.png" alt="System overhead measurements" loading="lazy"/>
+          <img src="static/images/figure_encoding.png" alt="Activation encoder under heterogeneous arithmetic" loading="lazy"/>
           <h2 class="subtitle has-text-centered">
-            System overhead. SPAC adds 0.65&ndash;2.56&nbsp;ms per session in the evaluated MLP and ResNet configurations, with proof metadata growing linearly in the chain length.
+            The activation encoder under heterogeneous arithmetic and adversarial substitution (split ResNet-18). (a)&nbsp;Mixed stack (CUDA fp32&nbsp;&rarr;&nbsp;CPU fp32&nbsp;&rarr;&nbsp;CPU fp16): protocol forwarding accepts 300/300 legal inputs. (b)&nbsp;Optimized within-cell substitution: harmful events by gradient budget at the first two edges; the final edge and all controls yield 0/96.
           </h2>
         </div>
       </div>
