@@ -2,7 +2,7 @@
 
 **[English](README.md)** | **[中文](README.zh-CN.md)**
 
-**[论文 (PDF)](docs/static/pdfs/spac_paper.pdf)** | **[中文项目主页](https://nullion2021.github.io/SPAC/index_zh.html)** | **[English Page](https://nullion2021.github.io/SPAC/)**
+**论文（即将上线）** | **[中文项目主页](https://nullion2021.github.io/SPAC/index_zh.html)** | **[English Page](https://nullion2021.github.io/SPAC/)**
 
 SPAC（Session-bound Path Authentication Chain，会话绑定路径认证链）是一种面向分布式神经网络推理的链式群体认证机制。它将设备身份、有序逐跳记录、已注册的分片声明与跨跳编码激活连续性绑定到同一份可验证证明中，把"指定的分布式推理确实在我的设备上执行过"转化为一条可校验的认证声明，可抵御信任边界上的代理模型替换与拓扑破坏攻击。
 
