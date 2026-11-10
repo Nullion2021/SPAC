@@ -4,14 +4,22 @@ title: "SPAC: Session-Bound Path Authentication for Distributed Neural Inference
 authors:
   - family-names: Xiang
     given-names: Zhengzhe
+    affiliation: "Hangzhou City University, China"
   - family-names: Chen
     given-names: Yinlin
+    affiliation: "Hangzhou City University, China"
   - family-names: Cheng
     given-names: Guanjie
+    affiliation: "Zhejiang University, China"
   - family-names: Taheri
     given-names: Javid
-  - family-names: Deng
-    given-names: Shuiguang
+    affiliation: "Karlstad University, Sweden; Queen's University Belfast, UK"
+  - family-names: Zhou
+    given-names: Binbin
+    affiliation: "Hangzhou City University, China"
+contact:
+  - family-names: Zhou
+    given-names: Binbin
 type: misc
 keywords:
   - distributed inference

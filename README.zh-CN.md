@@ -92,7 +92,7 @@ python scripts/generate_figures.py
 ```bibtex
 @misc{xiang2026spac,
   title        = {SPAC: Session-Bound Path Authentication for Distributed Neural Inference},
-  author       = {Xiang, Zhengzhe and Chen, Yinlin and Cheng, Guanjie and Taheri, Javid and Deng, Shuiguang},
+  author       = {Xiang, Zhengzhe and Chen, Yinlin and Cheng, Guanjie and Taheri, Javid and Zhou, Binbin},
   year         = {2026},
   howpublished = {Manuscript submitted to IEEE Transactions on Dependable and Secure Computing},
   url          = {https://nullion2021.github.io/SPAC/}
